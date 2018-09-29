@@ -1,0 +1,62 @@
+/***********************************
+* 3 solutions for sorting an array and 
+* returning only unique values in the array.
+*
+***********************************/
+
+// Unique sort array solution 1 auth: akatrent
+const uniqSort = (arr1) => {
+  let cache = {};
+  for(let i = 0; i < arr1.length; i++){
+    if(cache[arr1[i]]){
+        arr1.splice(i, 1);
+      	i--;
+    } else {
+      cache[arr1[i]] = true;
+    }
+  }
+  return arr1.sort((a, b) => a - b);
+};
+
+let arr = [4,2,2,3,3,3,88,2,1,2,2,5,1,2,3,6,1,4];
+console.log(uniqSort(arr));
+//result should be [1, 2, 3, 4, 5, 6, 88]
+
+// Unique sort array solution 2 auth: akatrent
+const uniqSort = (arr) => {
+  const cache = {};
+  const result = [];
+  
+  for(let i = 0; i < arr.length; i++){
+    if(!cache[arr[i]]){
+      result.push(arr[i]);
+      cache[arr[i]] = true;
+    }
+  }
+  return result.sort((a, b) => a - b);
+};
+
+let arr = [4,2,2,3,3,3,88,2,1,2,2,5,1,2,3,6,1,4];
+console.log(uniqSort(arr));
+//result should be [1, 2, 3, 4, 5, 6, 88]
+
+
+// solution 3 using strings auth: akatrent
+
+const uniqSort = (arr) => {
+  const cache = {};
+  const result = [];
+  
+  for(let i = 0; i < arr.length; i++){
+    if(!cache[arr[i]]){
+      result.push(arr[i]);
+      cache[arr[i]] = true;
+    }
+  }
+  return result.sort();
+};
+
+let arr = ["Banana", "Mango", "Orange", "Banana", "Apple", "Mango", "Mango"];
+console.log(uniqSort(arr));
+//result should be ["Apple", "Banana", "Mango", "Orange"]
+
