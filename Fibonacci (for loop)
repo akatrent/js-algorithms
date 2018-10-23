@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display Fibonacci sequence</p>
+
+<button onclick="fib()">Try it</button>
+
+<p id="fib"></p>
+
+<script>
+const fib = () => {
+    let a = 0,
+    	  b = 1,
+    	  result = 1;
+    let final = [];
+    for(let i = 0; i < 14; i++){
+    	final.push(result);
+        result = a + b;
+        a = b;
+        b = result;
+    }
+    let strFinal = final.join(' ');
+    document.getElementById('fib').textContent = strFinal;
+}
+
+</script>
+
+</body>
+</html>
