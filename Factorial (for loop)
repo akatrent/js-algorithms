@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="fact"></p>
+</body>
+<script>
+const recurFact = (num) => {
+	let result = num;
+	for(let i = num - 1; i > 1; i--){
+    	result *= i;
+    }
+    return result;
+}
+document.getElementById('fact').textContent = recurFact(5);
+</script>
+</html> 
