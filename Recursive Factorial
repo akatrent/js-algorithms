@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="fact"></p>
+</body>
+<script>
+const recurFact = (num) => {
+	if(num < 2){
+    	return num;
+    }
+    return num * recurFact(num - 1);
+}
+document.getElementById('fact').textContent = recurFact(5);
+</script>
+</html> 
